@@ -49,8 +49,8 @@ def create_sensor_readings_table(con):
             battery real,
             movement_counter integer,
             measurement_sequence_number integer,
-            sensor text,
-            foreign key(sensor) references sensors(mac)
+            mac text,
+            foreign key(mac) references sensors(mac)
         );
     ''')
     con.commit()
