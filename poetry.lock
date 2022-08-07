@@ -1,8 +1,58 @@
-package = []
+[[package]]
+name = "invoke"
+version = "1.7.1"
+description = "Pythonic task execution"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "ptyprocess"
+version = "0.7.0"
+description = "Run a subprocess in a pseudo terminal"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "reactivex"
+version = "4.0.4"
+description = "ReactiveX (Rx) for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+typing-extensions = ">=4.1.1,<5.0.0"
+
+[[package]]
+name = "ruuvitag-sensor"
+version = "2.0.0"
+description = "Find RuuviTag sensor beacons, get and encode data from selected sensors"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+ptyprocess = {version = "*", markers = "platform_system == \"Linux\""}
+reactivex = "*"
+
+[[package]]
+name = "typing-extensions"
+version = "4.3.0"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "fafb334cb038533f851c23d0b63254223abf72ce4f02987e7064b0c95566699a"
+content-hash = "2f0b64c5f8927367e980ff0149b2b3028621d8510947b0206c925354d0601883"
 
 [metadata.files]
+invoke = []
+ptyprocess = []
+reactivex = []
+ruuvitag-sensor = []
+typing-extensions = []
