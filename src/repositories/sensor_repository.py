@@ -9,7 +9,7 @@ class SensorRepository:
     def __init__(self, con):
         self._con = con
 
-    def add_sensor(self, sensor):
+    def add(self, sensor):
         cur = self._con.cursor()
         try:
             cur.execute(
