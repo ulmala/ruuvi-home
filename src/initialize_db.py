@@ -55,21 +55,6 @@ def create_sensor_readings_table(con):
     ''')
     con.commit()
 
-#{
-#    'data_format': 5, 
-#    'humidity': 42.75, 
-#    'temperature': 24.54, 
-#    'pressure': 1015.43, 
-#    'acceleration': 1040.6536407470066, 
-#    'acceleration_x': 8, 
-#    'acceleration_y': -36, 
-#    'acceleration_z': 1040, 
-#    'tx_power': 4, 
-#    'battery': 2992, 
-#    'movement_counter': 45, 
-#    'measurement_sequence_number': 5646, 
-#    'mac': 'd92e2aee6843'
-#}
 
 def main():
     connection = get_db_connection()
