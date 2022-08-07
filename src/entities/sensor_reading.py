@@ -16,3 +16,4 @@ class SensorReading:
     movement_counter: int
     measurement_sequence_number: int
     mac: str
+    datetime: str
