@@ -1,0 +1,8 @@
+__MACOSX
+*.pyc
+*.coverage
+htmlcov
+__pycache__
+.vscode
+
+data/database.sqlite
