@@ -50,6 +50,7 @@ def create_sensor_readings_table(con):
             movement_counter integer,
             measurement_sequence_number integer,
             mac text,
+            datetime text,
             foreign key(mac) references sensors(mac)
         );
     ''')
