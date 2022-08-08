@@ -2,8 +2,6 @@ from db_connection import get_db_connection
 from entities.sensor import Sensor
 from sqlite3 import IntegrityError
 
-class SensorExistsError(Exception):
-    pass
 
 class SensorRepository:
     def __init__(self, con):
@@ -18,7 +16,7 @@ class SensorRepository:
             )
             self._con.commit()
         except IntegrityError:
-            raise SensorExistsError(f'Sensor with MAC: {sensor.mac} already exsits!')
+            print(f'Sensor with MAC: {sensor.mac} already exsits!')
 
     def get_all_sensors(self):
         cur = self._con.cursor()
