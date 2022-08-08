@@ -3,17 +3,15 @@ import json
 from entities.sensor_reading import SensorReading
 from repositories.sensor_reading_repository import sensor_reading_repository
 from ruuvitag_sensor.ruuvi import RuuviTagSensor
+from services.sensor_service import sensor_service
 
-MACS = [
-    'D3:FD:F8:3E:33:67',
-    'D9:2E:2A:EE:68:43'
-]
 
 TIMEOUT = 10
 
 def main():
+    macs = [sensor.full_mac for sensor in sensor_service.all_sensors()]
     current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    data = RuuviTagSensor.get_data_for_sensors(MACS, TIMEOUT)
+    data = RuuviTagSensor.get_data_for_sensors(macs, TIMEOUT)
     for _, v in data.items():
         v['datetime'] = current_time
         reading = json.loads(
