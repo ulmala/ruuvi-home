@@ -24,7 +24,5 @@ class SensorService:
     def insert_sensor_reading(self, reading):
         self._sensor_reading_repository.insert_sensor_reading(reading)
 
-    def get_readings(self, sensor):
-        return self._sensor_repository.get_sensor_readings(sensor)
 
 sensor_service = SensorService()
