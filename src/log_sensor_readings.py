@@ -1,7 +1,6 @@
 import datetime
 import json
 from entities.sensor_reading import SensorReading
-from repositories.sensor_reading_repository import sensor_reading_repository
 from ruuvitag_sensor.ruuvi import RuuviTagSensor
 from services.sensor_service import sensor_service
 
