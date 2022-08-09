@@ -17,7 +17,7 @@ def main():
         reading = json.loads(
             json.dumps(v), object_hook=lambda d: SensorReading(**d)
         )
-        sensor_reading_repository.insert_sensor_reading(reading)
+        sensor_service.insert_sensor_reading(reading)
 
 if __name__ == "__main__":
     main()
