@@ -1,3 +1,4 @@
+import pandas as pd
 from db_connection import get_db_connection
 from entities.sensor import Sensor
 from sqlite3 import IntegrityError
@@ -26,5 +27,12 @@ class SensorRepository:
             return []
         return [Sensor(row['mac'], row['name']) for row in rows]
 
+    def get_sensor_readings(self, sensor):
+        sql = f'''
+            SELECT * FROM sensor_readings
+            WHERE mac = '{sensor.mac}'
+        '''
+        df = pd.read_sql_query(sql, self._con)
+        return df
 
 sensor_repository = SensorRepository(get_db_connection())
